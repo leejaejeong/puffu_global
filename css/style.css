@@ -1,0 +1,182 @@
+body {
+    font-family: 'Pretendard-Regular';
+}
+
+/* =========== 헤더 =========== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 38px 60px 26px 60px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+header .logo_img img {
+    max-width: 169px;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+header ul li a {
+    color: #fff;
+    font-weight: 800;
+}
+
+/* =========== 메인 비주얼 =========== */
+.main_visual {
+    position: relative;
+}
+
+.main_visual .img_box {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.main_visual>.img_box.active {
+    opacity: 1;
+}
+
+.main_visual .txt_box {
+    position: absolute;
+    top: 197px;
+    left: 158px;
+}
+
+.main_visual .txt_box h1 {
+    font-size: 5rem;
+    color: #fff;
+    font-weight: 900;
+    line-height: 6rem;
+}
+
+.main_visual .txt_box.active {
+    opacity: 1;
+}
+
+
+/* =========== section_01 회사소개 =========== */
+.section_01 {
+    padding: 200px 0;
+    box-sizing: border-box;
+}
+
+.section_01 .contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px 170px 120px;
+    box-sizing: border-box;
+}
+
+.section_01 .contents .txt_box h2 {
+    padding: 0 0 30px 0;
+    box-sizing: border-box;
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 5rem;
+    color: #0064FF;
+}
+
+.section_01 .contents .txt_box p {
+    width: 600px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2rem;
+    word-break: keep-all;
+}
+
+.section_01 .contents .img_box{
+    width: 845px;
+}
+
+.section_01 .contents .img_box img {
+    width: 100%;
+}
+
+.section_01 .marquee_container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.section_01 .marquee {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+}
+
+.section_01 .marquee {
+    animation: rollingLeft01 80s linear infinite;
+}
+
+
+@keyframes rollingLeft01 {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-100%);
+    }
+
+    50.01% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes rollingLeft02 {
+    0% {
+        transition: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+
+/* =========== section_02 사업소개 =========== */
+.section_02 .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    width: 100%;
+    height: 100vh;
+    padding: 0 120px;
+    box-sizing: border-box;
+}
+
+.section_02 .container .img_box{
+    width: 782px;
+}
+
+.section_02 .container .img_box img{
+    width: 100%;
+}
+
+.section_02 .container .txt_box .title{
+    width: fit-content;
+    padding: 18px 35px;
+    box-sizing: border-box;
+    font-size: 1.375rem;
+    color: #0064FF;
+    border-radius: 50px;
+    border: solid 1px #0064FF;
+}

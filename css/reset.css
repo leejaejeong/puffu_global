@@ -41,3 +41,14 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+img{
+	display: block;
+	margin: 0;
+	padding: 0;
+}
