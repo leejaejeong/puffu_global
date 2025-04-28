@@ -6,6 +6,7 @@
 
     --font-size-h1: 5rem; /* 80px */
     --font-size-h2: 4.5rem; /* 72px */
+    --font-size-h3: 1.375rem; /* 22px */ 
     --font-size-p: 1.5rem; /* 24px */
     --font-size-title: 1.375rem; /* 22px */ 
    }
@@ -78,13 +79,13 @@ header ul li a {
 }
 
 
-/* =========== section_01 회사소개 =========== */
-.section_01 {
+/* =========== sec_01 회사소개 =========== */
+.sec_01 {
     padding: 200px 0;
     box-sizing: border-box;
 }
 
-.section_01 .contents {
+.sec_01 .contents {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -92,7 +93,7 @@ header ul li a {
     box-sizing: border-box;
 }
 
-.section_01 .contents .txt_box h2 {
+.sec_01 .contents .txt_box h2 {
     padding: 0 0 30px 0;
     box-sizing: border-box;
     font-size:var(--font-size-h2);
@@ -101,7 +102,7 @@ header ul li a {
     color: var(--brand-color)
 }
 
-.section_01 .contents .txt_box p {
+.sec_01 .contents .txt_box p {
     width: 600px;
     font-size: var(--font-size-p);
     font-weight: 500;
@@ -109,15 +110,15 @@ header ul li a {
     word-break: keep-all;
 }
 
-.section_01 .contents .img_box {
+.sec_01 .contents .img_box {
     width: 845px;
 }
 
-.section_01 .contents .img_box img {
+.sec_01 .contents .img_box img {
     width: 100%;
 }
 
-.section_01 .marquee_container {
+.sec_01 .marquee_container {
     display: flex;
     align-items: center;
     width: 100%;
@@ -125,7 +126,7 @@ header ul li a {
     overflow: hidden;
 }
 
-.section_01 .marquee {
+.sec_01 .marquee {
     display: flex;
     align-items: center;
     gap: 44px;
@@ -133,7 +134,7 @@ header ul li a {
     animation: rollingLeft01 60s linear infinite;
 }
 
-.section_01 .marquee img{
+.sec_01 .marquee img{
     width: 774px;
 }
 
@@ -157,13 +158,13 @@ header ul li a {
 }
 
 
-/* =========== section_02 사업소개 =========== */
-.section_02{   
+/* =========== sec_02 사업소개 =========== */
+.sec_02{   
     height: 3240px;
     padding: 0 120px;
     box-sizing: border-box;
 }
-.section_02 .container {
+.sec_02 .container {
     position: sticky;
     top: 82px;
     display: flex;
@@ -173,36 +174,36 @@ header ul li a {
     height: 100vh;
 }
 
-.section_02 .container .img_box {
+.sec_02 .container .img_box {
     width: 770px;
 }
 
-.section_02 .container .img_box img {
+.sec_02 .container .img_box img {
     width: 100%;
 }
 
-.section_02 .container_01 .img_box{
+.sec_02 .container_01 .img_box{
     background-color: #F2F2F2;
     border-radius: 20px;
 }
 
-.section_02 .container{
+.sec_02 .container{
     position: sticky;
     top: 0;
     
 }
 
-.section_02 .container .txt_box{
+.sec_02 .container .txt_box{
     width: 50%;
     opacity: 0;
 }
 
-.section_02 .container .txt_box.active{
+.sec_02 .container .txt_box.active{
     opacity: 1;
-    transition: 3s;
+    transition: 1.5s;
 }
 
-.section_02 .container .txt_box .title {
+.sec_02 .container .txt_box h3 {
     width: fit-content;
     padding: 18px 35px;
     margin: 0 0 40px 0;
@@ -213,15 +214,93 @@ header ul li a {
     border: solid 1px var(--brand-color);
 }
 
-.section_02 .container .txt_box h2 {
+.sec_02 .container .txt_box h2 {
     font-size: var(--font-size-h2);
     font-weight: 800;
     line-height: 5rem;
     margin: 0 0 30px 0;
 }
 
-.section_02 .container .txt_box p {
+.sec_02 .container .txt_box p {
+    max-width: 595px;
     font-size: var(--font-size-p);
     color: var(--color_black);
+    font-weight: 500;
+    line-height: 2rem;
     word-break: keep-all;
+}
+
+
+/* =========== sec_03 브랜드철학 =========== */
+.sec_03 .item{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sec_03 .item_01 {
+    background-color: var(--brand-color);
+}
+
+.sec_03 .item_02{
+    background-image: url(../image/puffu_global_section_03_img01.jpg);
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: multiply;
+}
+.sec_03 .item_03{
+    background-image: url(../image/puffu_global_section_03_img02.jpg);
+    background-color: rgba(0, 0, 0, 0.2);
+    background-blend-mode: multiply;
+}
+.sec_03 .item_04{
+    background-image: url(../image/puffu_global_section_03_img03.jpg);
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: multiply;
+
+}
+
+.sec_03 .item .txt_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sec_03 .item .tit_box{
+    width: 100%;
+    text-align: center;
+}
+
+.sec_03 .item p,
+.sec_03 .item h2,
+.sec_03 .item h3 {
+    text-align: center;
+    color: var(--color_white);
+}
+
+.sec_03 .item h3{
+    width: fit-content;
+    padding: 12px 36px;
+    margin: 0 auto 50px auto;
+    font-size: var(--font-size-title);
+    font-weight: 800;
+    border-radius: 50px;
+    border: solid 1px var(--color_white);
+}
+
+.sec_03 .item h2{
+    padding: 0 0 20px 0;
+    font-size: var(--font-size-h2);
+    font-weight: 800;
+    line-height: 5rem;
+    line-height: 5.5rem;
+}
+
+.sec_03 .item p{
+    font-size: var(--font-size-p);
+    font-weight: 800;
+    line-height: 2rem;
 }
