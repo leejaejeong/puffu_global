@@ -18,6 +18,7 @@
 
 body {
     font-family: 'Pretendard-Regular';
+    overflow-x: hidden;
 }
 
 body.stop-scroll {
@@ -67,6 +68,7 @@ header ul li a {
     top: 0;
     left: 0;
     z-index: 99;
+    width: 100%;
 
     animation-name: hideIntro;
     animation-duration: 0.5s;
@@ -202,7 +204,7 @@ header ul li a {
 
 /* =========== sec_02 사업소개 =========== */
 .sec_02 {
-    height: 3240px;
+    height: 3440px;
     padding: 0 120px;
     box-sizing: border-box;
 }
@@ -218,7 +220,7 @@ header ul li a {
 }
 
 .sec_02 .container .img_box {
-    width: 770px;
+    width: 50%;
 }
 
 .sec_02 .container .img_box img {
@@ -275,10 +277,16 @@ header ul li a {
 
 
 /* =========== sec_03 브랜드철학 =========== */
+.sec_03 {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 .sec_03 .item {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
+    overflow: hidden;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

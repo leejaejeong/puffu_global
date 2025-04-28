@@ -7,14 +7,14 @@ $(document).ready(function () {
     $('body').addClass('stop-scroll');
     setTimeout(function () {
         $('body').removeClass('stop-scroll');
-    }, 3500);
+    }, 4000);
 
     gsap.from('header', {
         y: -150,
         duration: 0.5,
-        delay: 3.2
+        delay: 3.6
     });
-    
+
     $(window).on('scroll', function () {
         let scrollTop = $(window).scrollTop();
         let offset = 0; // 약간 미리 트리거 시키는 오프셋 추가
@@ -35,14 +35,24 @@ $(document).ready(function () {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.utils.toArray('.item').forEach((item, i) => {
-        ScrollTrigger.create({
-            trigger: item,
-            start: "top top",
-            end: "bottom top",
-            snap: 1 / (document.querySelectorAll('.item').length - 1),
-            scrub: 1, // 부드럽게 따라오는 느낌
-        });
+    let sections = gsap.utils.toArray(".item");
+
+    gsap.to(sections, {
+        yPercent: -100 * (sections.length - 1),
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".sec_03",
+            pin: true,
+            scrub: 1,
+            snap: {
+                snapTo: 1 / (sections.length - 1),
+                duration: 0.1,
+                delay: 0.1,
+                ease: "power1.inOut"
+            },
+            // base vertical scrolling on how wide the container is so it feels more natural.
+            end: "+=3500"
+        }
     });
 
 })
