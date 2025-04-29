@@ -75,12 +75,33 @@ header ul li a {
     left: 0;
     z-index: 99;
     width: 100%;
+    height: 100vh;
+
+    background-image: url(../image/puffu_global_main_visual_01.png);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-blend-mode: multiply;
 
     animation-name: hideIntro;
     animation-duration: 0.5s;
-    animation-delay: 1.8s;
+    animation-delay: 4s;
     animation-fill-mode: forwards;
 }
+
+.main_visual02{
+    width: 100%;
+    height: 100vh;
+
+    background-image: url(../image/puffu_global_main_visual_02.png);
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.2);
+    background-blend-mode: multiply;
+}
+
 
 .main_visual .img_box {
     overflow: hidden;
@@ -98,22 +119,40 @@ header ul li a {
     object-fit: cover;
 }
 
-.main_visual .txt_box {
+.main_visual .txt_box_02 {
     position: absolute;
-    top: 197px;
-    left: 158px;
+    /* top: 197px;
+    left: 158px; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
+
+/* .main_visual .txt_box h1 {
+    font-size: var(--font-size-h1);
+    color: var(--color_white);
+    font-weight: 900;
+    line-height: 6rem;
+} */
 
 .main_visual .txt_box h1 {
     font-size: var(--font-size-h1);
     color: var(--color_white);
     font-weight: 900;
-    line-height: 6rem;
+    line-height: 6.25rem;
 }
 
-.main_visual .txt_box.active {
-    opacity: 1;
+.main_visual .txt_box .txt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
+/* .main_visual .txt_box.active {
+    opacity: 1;
+} */
 
 @keyframes hideIntro {
     0% {

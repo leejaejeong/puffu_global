@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    gsap.registerPlugin(ScrollTrigger);
+
     $(function () {
         $("html, body").animate({ scrollTop: 0 }, 300);
     });
@@ -7,13 +9,34 @@ $(document).ready(function () {
     $('body').addClass('stop-scroll');
     setTimeout(function () {
         $('body').removeClass('stop-scroll');
-    }, 4000);
+    }, 4800);
 
     gsap.from('header', {
         y: -80,
         duration: 0.5,
-        delay: 3.5
+        delay: 4.5
     });
+
+    const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".main_visual01",
+          start: "top center",
+          toggleActions: "play none none none",
+          markers: false
+        }
+      });
+      
+      tl.fromTo(".txt_01", 
+        { opacity: 0 }, 
+        { opacity: 1, duration: 0.5, ease: "power2.out" }
+      )
+      .to(".txt_01", 
+        { opacity: 0, duration: 0.5, delay: 0.5, ease: "power2.inOut" }
+      )
+      .fromTo(".txt_02", 
+        { opacity: 0 }, 
+        { opacity: 1, duration: 0.5, ease: "power2.out" }
+      );
 
     $(function () {
         $("a[href^='#']").on("click", function (e) {
@@ -74,7 +97,6 @@ $(document).ready(function () {
 
 
     // sec_03 풀페이지
-    gsap.registerPlugin(ScrollTrigger);
     const sections = gsap.utils.toArray(".itemBox > .item");
 
     gsap.to(sections, {
