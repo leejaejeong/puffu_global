@@ -15,6 +15,20 @@ $(document).ready(function () {
         delay: 3.5
     });
 
+    $(function () {
+        $("a[href^='#']").on("click", function (e) {
+            e.preventDefault(); // 기본 점프 이동 막기
+            let target = $($(this).attr("href"));
+            if (target.length) {
+                $("html, body").animate({
+                    scrollTop: target.offset().top
+                }, 600); // 600ms 부드럽게 이동
+            }
+        });
+    });
+
+
+    // sec_02 텍스트 페이드 인 아웃
     $(window).on('scroll', function () {
         let scrollTop = $(window).scrollTop();
         let offset = 0; // 약간 미리 트리거 시키는 오프셋 추가
@@ -33,8 +47,7 @@ $(document).ready(function () {
         }
     });
 
-    gsap.registerPlugin(ScrollTrigger);
-
+    // gsap.registerPlugin(ScrollTrigger);
     // let sections = gsap.utils.toArray(".sec_03 .item");
     // let sections = gsap.utils.toArray(".sec_03 > .itemBox > .item");
 
@@ -60,6 +73,8 @@ $(document).ready(function () {
     // });
 
 
+    // sec_03 풀페이지
+    gsap.registerPlugin(ScrollTrigger);
     const sections = gsap.utils.toArray(".itemBox > .item");
 
     gsap.to(sections, {
@@ -68,9 +83,9 @@ $(document).ready(function () {
         scrollTrigger: {
             trigger: ".itemBox",
             pin: true,
-            pinSpacing: false,
+            pinSpacing: false, // 여백 제거
             scrub: 1,
-            markers: true,
+            // markers: true,
             snap: {
                 snapTo: 1 / (sections.length - 1), // 1/3 = 0.333씩 snap
                 duration: 0.1,
@@ -82,18 +97,20 @@ $(document).ready(function () {
     });
 
 
-
-    $(function () {
-        $("a[href^='#']").on("click", function (e) {
-            e.preventDefault(); // 기본 점프 이동 막기
-            let target = $($(this).attr("href"));
-            if (target.length) {
-                $("html, body").animate({
-                    scrollTop: target.offset().top
-                }, 600); // 600ms 부드럽게 이동
-            }
-        });
-    });
+    
+    gsap.from(".card", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power2.out",
+        stagger: 0.3, // 카드마다 0.3초 간격으로 순차 등장
+        scrollTrigger: {
+          trigger: ".card_container",
+          start: "top 80%", // card_container가 화면 80% 위치에 오면 시작
+          toggleActions: "play none none none",
+          markers: false // 개발 중 디버깅할 때 true
+        }
+      });
 
 })
 

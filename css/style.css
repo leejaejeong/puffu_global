@@ -388,8 +388,88 @@ header ul li a {
 }
 
 .sec_04 .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
     width: 33.33%;
-    padding: 130px 120px;
+    height: 630px;
+    padding: 0 50px;
+    text-align: center;
     border-radius: 20px;
-    border: solid 1px var(--brand-color);
+    border: solid 2px var(--brand-color);
+}
+
+.sec_04 .card_02{
+    margin: 70px 0 0 0;
+}
+
+.sec_04 .card .img_box{
+    width: 128px;
+}
+
+.sec_04 .card .img_box img{
+    width: 100%;
+}
+
+.sec_04 .card .txt_box h3{
+    font-size: var(--font-size-h3);
+    color: var(--color_black);
+    font-weight: 700;
+    line-height: 2.5rem;
+    padding: 0 0 30px 0; 
+    word-break: keep-all;
+}
+
+.sec_04 .card .txt_box p{
+    font-size: var(--font-size-p);
+    color: var(--color_black);
+    font-weight: 500;
+    line-height: 1.8rem;
+    word-break: keep-all;
+}
+
+
+
+/* =========== sec_05 입점신청 배너 =========== */
+.sec_05{
+    padding: 50px 120px;
+    box-sizing: border-box;
+}
+
+.sec_05 .banner_box{
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+    box-sizing: border-box;
+    text-align: center;
+    background-image: url(../image/puffu_global_section_05_back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+}
+
+.sec_05 .banner_box .txt_box{
+    padding: 0 0 30px 0;
+    box-sizing: border-box;
+}
+
+.sec_05 .banner_box .txt_box p{
+    font-size: 2.625rem;
+    font-weight: 800;
+    color: var(--color_white);
+}
+
+.sec_05 .banner_box a{
+    width: fit-content;
+    margin: 0 auto;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    font-size: var(--font-size-p);
+    font-weight: 800;
+    color: var(--color_white);
+    background-color: var(--brand-color);
 }
