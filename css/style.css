@@ -400,14 +400,14 @@ header ul li a {
 @media(max-width:768px) {
     .sec_02 {
         height: 2400px;
-        padding: 0 20px;
+        padding: 150px 20px;
     }
 
     .sec_02 .container {
         position: sticky;
-        top: 120px;
+        top: 80px;
 
-        gap: 50px;
+        gap: 30px;
         flex-direction: column-reverse;
     }
 
@@ -433,6 +433,12 @@ header ul li a {
     width: 100%;
     overflow: hidden;
 }
+
+.itemBox {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
 
 .sec_03 .item {
     position: relative;
@@ -491,24 +497,29 @@ header ul li a {
     width: fit-content;
     padding: 12px 36px;
     margin: 0 auto 50px auto;
-    font-size: var(--font-size-title);
+    /* font-size: var(--font-size-title); */
     font-weight: 800;
+    font-size: clamp(1rem, 1.15vw, 1.375rem);
+    line-height: clamp(1.2rem, 1.8vw, 2rem);
     border-radius: 50px;
     border: solid 1px var(--color_white);
 }
 
 .sec_03 .item h2 {
     padding: 0 0 20px 0;
-    font-size: var(--font-size-h2);
+    /* font-size: var(--font-size-h2);
+    line-height: 5rem; */
+    font-size: clamp(2rem, 3.75vw, 4.5rem);
+    line-height: clamp(2.5rem, 4vw, 5rem);
     font-weight: 800;
-    line-height: 5rem;
-    line-height: 5.5rem;
 }
 
 .sec_03 .item p {
-    font-size: var(--font-size-p);
+    /* font-size: var(--font-size-p);
+    line-height: 2rem; */
     font-weight: 800;
-    line-height: 2rem;
+    font-size: clamp(1rem, 1.25vw, 1.5rem);
+    line-height: clamp(1.5rem, 1.8vw, 2rem);
 }
 
 @media(max-width:1240px) {}
@@ -525,7 +536,8 @@ header ul li a {
 .sec_04 .tit_box {
     padding: 0 0 100px 0;
     text-align: center;
-    font-size: var(--font-size-h2);
+    font-size: clamp(2rem, 3.75vw, 4.5rem);
+    line-height: clamp(2.5rem, 4vw, 5rem);
     font-weight: 800;
 }
 
@@ -535,6 +547,7 @@ header ul li a {
     align-items: center;
     gap: 40px;
     padding: 0 120px;
+    box-sizing: border-box;
 }
 
 .sec_04 .card {
@@ -546,6 +559,7 @@ header ul li a {
     width: 33.33%;
     height: 630px;
     padding: 0 50px;
+    box-sizing: border-box;
     text-align: center;
     border-radius: 20px;
     border: solid 2px var(--brand-color);
@@ -564,19 +578,23 @@ header ul li a {
 }
 
 .sec_04 .card .txt_box h3 {
-    font-size: var(--font-size-h3);
-    color: var(--color_black);
-    font-weight: 700;
-    line-height: 2.5rem;
     padding: 0 0 30px 0;
+    font-size: var(--font-size-h3);
+    line-height: 2.5rem;
+    font-size: clamp(1.5rem, 1.667vw, 2rem);
+    line-height: clamp(2rem, 2vw, 2.5rem);
+    font-weight: 700;
+    color: var(--color_black);
     word-break: keep-all;
 }
 
 .sec_04 .card .txt_box p {
-    font-size: var(--font-size-p);
+    /* font-size: var(--font-size-p);
+    line-height: 1.8rem; */
+    font-size: clamp(1rem, 1.25vw, 1.5rem);
+    line-height: clamp(1.5rem, 1.8vw, 2rem);
     color: var(--color_black);
     font-weight: 500;
-    line-height: 1.8rem;
     word-break: keep-all;
 }
 
@@ -591,7 +609,37 @@ header ul li a {
     }
 }
 
-@media(max-width:768px) {}
+@media(max-width:768px) {
+    .sec_04 {
+        padding: 150px 20px;
+    }
+
+    .sec_04 .tit_box {
+        padding: 0 0 50px 0;
+    }
+
+    .sec_04 .card_container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0;
+    }
+
+    .sec_04 .card {
+        gap: 30px;
+        width: 100%;
+        height: auto;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .sec_04 .card_02 {
+        margin: 0;
+    }
+
+    .sec_04 .card .img_box {
+        width: 60px;
+    }
+}
 
 
 
@@ -623,6 +671,7 @@ header ul li a {
 
 .sec_05 .banner_box .txt_box p {
     font-size: 2.625rem;
+    font-size: clamp(1.8rem, 2.188vw, 2.625rem);
     font-weight: 800;
     color: var(--color_white);
 }
@@ -633,7 +682,8 @@ header ul li a {
     padding: 20px 30px;
     box-sizing: border-box;
     border-radius: 50px;
-    font-size: var(--font-size-p);
+    /* font-size: var(--font-size-p); */
+    font-size: clamp(1rem, 1.25vw, 1.5rem);
     font-weight: 800;
     color: var(--color_white);
     background-color: var(--brand-color);
@@ -641,12 +691,25 @@ header ul li a {
 
 @media(max-width:1240px) {}
 
-@media(max-width:768px) {}
+@media(max-width:768px) {
+    .sec_05 {
+        padding: 50px 20px;
+    }
+
+    .sec_05 .banner_box {
+        padding: 100px 30px;
+        background-position: top left;
+    }
+
+    .sec_05 .banner_box a {
+        padding: 16px 30px;
+    }
+}
 
 
 /* =========== footer =========== */
 footer {
-    padding: 24px 60px 60px 60px;
+    padding: 24px 60px 80px 60px;
     background-color: var(--color_grey);
 }
 
@@ -690,4 +753,21 @@ footer .txt_box .copyright_box {
     }
 }
 
-@media(max-width:768px) {}
+@media(max-width:768px) {
+    footer {
+        padding: 30px 20px 60px 20px;
+    }
+
+    footer .txt_box .corp_info_box ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    footer .txt_box .corp_info_box{
+        flex-direction: column;
+    }
+
+    footer .txt_box .copyright_box {
+        padding: 20px 0 0 0;
+    }
+}
