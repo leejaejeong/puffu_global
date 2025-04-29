@@ -12,7 +12,7 @@ $(document).ready(function () {
     gsap.from('header', {
         y: -150,
         duration: 0.5,
-        delay: 3.6
+        delay: 3.5
     });
 
     $(window).on('scroll', function () {
@@ -35,37 +35,65 @@ $(document).ready(function () {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    let sections = gsap.utils.toArray(".item");
+    // let sections = gsap.utils.toArray(".sec_03 .item");
+    // let sections = gsap.utils.toArray(".sec_03 > .itemBox > .item");
+
+    // gsap.to(sections, {
+    //     yPercent: -100 * (sections.length - 1),
+    //     ease: "none",
+    //     scrollTrigger: {
+    //         trigger: ".sec_03",
+    //         pin: true,
+    //         pinSpacing: false,
+    //         scrub: 1,
+    //         markers: true,
+    //         snap: {
+    //             snapTo: 1 / (sections.length - 1),
+    //             duration: 0.1,
+    //             delay: 0.1,
+    //             ease: "power1.inOut"
+    //         },
+
+    //         end: () => "+=" + (window.innerHeight * sections.length - 1)
+    //         // end: "+=1500"
+    //     }
+    // });
+
+
+    const sections = gsap.utils.toArray(".itemBox > .item");
 
     gsap.to(sections, {
         yPercent: -100 * (sections.length - 1),
         ease: "none",
         scrollTrigger: {
-            trigger: ".sec_03",
+            trigger: ".itemBox",
             pin: true,
+            pinSpacing: false,
             scrub: 1,
+            markers: true,
             snap: {
-                snapTo: 1 / (sections.length - 1),
+                snapTo: 1 / (sections.length - 1), // 1/3 = 0.333씩 snap
                 duration: 0.1,
                 delay: 0.1,
                 ease: "power1.inOut"
             },
-            // base vertical scrolling on how wide the container is so it feels more natural.
-            end: "+=3500"
+            end: () => "+=" + window.innerHeight * (sections.length - 1)
         }
     });
 
-    $(function() {
-        $("a[href^='#']").on("click", function(e) {
-          e.preventDefault(); // 기본 점프 이동 막기
-          let target = $($(this).attr("href"));
-          if (target.length) {
-            $("html, body").animate({
-              scrollTop: target.offset().top
-            }, 600); // 600ms 부드럽게 이동
-          }
+
+
+    $(function () {
+        $("a[href^='#']").on("click", function (e) {
+            e.preventDefault(); // 기본 점프 이동 막기
+            let target = $($(this).attr("href"));
+            if (target.length) {
+                $("html, body").animate({
+                    scrollTop: target.offset().top
+                }, 600); // 600ms 부드럽게 이동
+            }
         });
-      });
+    });
 
 })
 
