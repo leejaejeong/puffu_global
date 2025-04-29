@@ -16,6 +16,10 @@
     /* 22px */
 }
 
+html{
+    scroll-behavior: smooth;
+  }
+  
 body {
     font-family: 'Pretendard-Regular';
     overflow-x: hidden;

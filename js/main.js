@@ -55,5 +55,17 @@ $(document).ready(function () {
         }
     });
 
+    $(function() {
+        $("a[href^='#']").on("click", function(e) {
+          e.preventDefault(); // 기본 점프 이동 막기
+          let target = $($(this).attr("href"));
+          if (target.length) {
+            $("html, body").animate({
+              scrollTop: target.offset().top
+            }, 600); // 600ms 부드럽게 이동
+          }
+        });
+      });
+
 })
 
