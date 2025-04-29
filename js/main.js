@@ -10,7 +10,7 @@ $(document).ready(function () {
     }, 4000);
 
     gsap.from('header', {
-        y: -150,
+        y: -80,
         duration: 0.5,
         delay: 3.5
     });

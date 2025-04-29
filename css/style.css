@@ -44,7 +44,7 @@ header {
     width: 100%;
     padding: 38px 60px 26px 60px;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 100;
 }
 
@@ -473,3 +473,46 @@ header ul li a {
     color: var(--color_white);
     background-color: var(--brand-color);
 }
+
+
+/* =========== footer =========== */
+footer{
+    padding: 24px 60px 60px 60px;
+    background-color: var(--color_grey);
+}
+
+footer .logo_img{
+    width: 170px;
+    padding: 0 0 20px 0;
+}
+
+footer .logo_img img{
+    width: 100%;
+}
+
+footer .txt_box{
+    color: var(--color_white);
+}
+
+footer .txt_box .corp_info_box{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 0 0 0;
+}
+
+footer .txt_box .corp_info_box ul{
+    display: flex;
+    gap: 30px;
+}
+
+footer .txt_box .corp_info_box ul li span{
+    padding: 0 0 0 10px;
+    color: #7B7B7B;
+}
+
+footer .txt_box .copyright_box{
+    color: #7B7B7B;
+}
+
+
