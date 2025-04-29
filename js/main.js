@@ -70,6 +70,35 @@ $(document).ready(function () {
         }
     });
 
+    // $(window).on('scroll', function () {
+    //     let scrollTop = $(window).scrollTop();
+    //     let offset = 200; // 필요 시 조정
+    
+    //     let container1Top = $('.sec_02 > .container_01').offset().top - offset;
+    //     let container2Top = $('.sec_02 > .container_02').offset().top - offset;
+    //     let container3Top = $('.sec_02 > .container_03').offset().top - offset;
+    
+    //     let activeTarget;
+    
+    //     if (scrollTop >= container3Top) {
+    //         activeTarget = $('.sec_02 > .container_03 > .txt_box');
+    //     } else if (scrollTop >= container2Top) {
+    //         activeTarget = $('.sec_02 > .container_02 > .txt_box');
+    //     } else if (scrollTop >= container1Top) {
+    //         activeTarget = $('.sec_02 > .container_01 > .txt_box');
+    //     }
+    
+    //     $('.sec_02 .txt_box').each(function () {
+    //         if ($(this).is(activeTarget)) {
+    //             if (!$(this).hasClass('active')) {
+    //                 $(this).addClass('active');
+    //             }
+    //         } else {
+    //             $(this).removeClass('active');
+    //         }
+    //     });
+    // });
+
     // gsap.registerPlugin(ScrollTrigger);
     // let sections = gsap.utils.toArray(".sec_03 .item");
     // let sections = gsap.utils.toArray(".sec_03 > .itemBox > .item");
