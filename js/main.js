@@ -17,6 +17,27 @@ $(document).ready(function () {
         delay: 4.5
     });
 
+    $(function () {
+        $(".header_m > nav").removeClass("active");
+        $(".nav_btn").on("click", function () {
+            $(".header_m > nav").addClass("active");
+            $('body').addClass('stop-scroll');
+        });
+    });
+
+    $(function () {
+        $(".header_m > nav > .close_btn").on("click", function () {
+            $(".header_m > nav").removeClass("active");
+            $('body').removeClass('stop-scroll');
+        });
+
+        $(".header_m > nav > ul > li > a").on("click", function () {
+            $(".header_m > nav").removeClass("active");
+            $('body').removeClass('stop-scroll');
+        });
+    });
+    
+
     const tl = gsap.timeline({
         scrollTrigger: {
             trigger: ".main_visual01",
@@ -54,20 +75,38 @@ $(document).ready(function () {
     // sec_02 텍스트 페이드 인 아웃
     $(window).on('scroll', function () {
         let scrollTop = $(window).scrollTop();
-        let winHeight = $(window).height();
-    
-        $('.sec_02 .container').each(function () {
-            let $this = $(this);
-            let offsetTop = $this.offset().top;
-            let offsetBottom = offsetTop + $this.outerHeight();
-    
-            // 뷰포트 중앙 기준
-            if (scrollTop + winHeight / 2 >= offsetTop && scrollTop + winHeight / 2 < offsetBottom) {
-                $('.sec_02 .txt_box').removeClass('active');
-                $this.find('.txt_box').addClass('active');
-            }
-        });
+        let offset = 0; // 약간 미리 트리거 시키는 오프셋 추가
+
+        let container02Top = $('.sec_02 > .container_02').offset().top - offset;
+        let container03Top = $('.sec_02 > .container_03').offset().top - offset;
+
+        $('.txt_box').removeClass('active');
+
+        if (scrollTop >= container03Top) {
+            $('.sec_02 > .container_03 > .txt_box').addClass('active');
+        } else if (scrollTop >= container02Top) {
+            $('.sec_02 > .container_02 > .txt_box').addClass('active');
+        } else {
+            $('.sec_02 > .container_01 > .txt_box').addClass('active');
+        }
     });
+
+    // $(window).on('scroll', function () {
+    //     let scrollTop = $(window).scrollTop();
+    //     let winHeight = $(window).height();
+    
+    //     $('.sec_02 .container').each(function () {
+    //         let $this = $(this);
+    //         let offsetTop = $this.offset().top;
+    //         let offsetBottom = offsetTop + $this.outerHeight();
+    
+    //         // 뷰포트 중앙 기준
+    //         if (scrollTop + winHeight / 2 >= offsetTop && scrollTop + winHeight / 2 < offsetBottom) {
+    //             $('.sec_02 .txt_box').removeClass('active');
+    //             $this.find('.txt_box').addClass('active');
+    //         }
+    //     });
+    // });
     
     // $(window).on('scroll', function () {
     //     let scrollTop = $(window).scrollTop();
@@ -141,8 +180,6 @@ $(document).ready(function () {
             end: () => "+=" + container.offsetHeight * (sections.length - 1)
         }
     });
-
-
 
     gsap.from(".card", {
         opacity: 0,
